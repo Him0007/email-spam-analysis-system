@@ -30,16 +30,17 @@ The main purpose of this project is to understand how text classification works 
 ## 📁 Project Structure
 
 
-├── app.py # Main Flask application
-
-├── spam_detector.py # Machine learning logic
-├── requirements.txt # Required Python packages
-├── README.md
+│
+├── app.py                 # Main Flask application
+├── spam_detector.py       # Machine learning logic
+├── requirements.txt       # Required Python packages
+├── README.md              # Project documentation
+│
 ├── data/
-│ └── spam_data.csv # Dataset file
-├── templates/
-│ └── index.html # Web page
-└── .gitignore
+│   └── spam_data.csv      # Dataset file
+│
+└── templates/
+    └── index.html         # Web page (UI)
 
 ---
 
