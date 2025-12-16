@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spam Detector - Dark Mode</title>
+    <style>
+        :root {
+            --bg-color: #1a1a1a;
+            --text-color: #e0e0e0;
+            --primary-color: #007bff;
+            --primary-hover: #0056b3;
+            --secondary-bg: #2c2c2c;
+            --border-color: #444;
+            --input-bg: #333;
+            --input-border: #555;
+            --success-bg: #1f4e2c;
+            --success-border: #2a6a3b;
+            --success-text: #d4edda;
+            --error-bg: #5a1a22;
+            --error-border: #7c2430;
+            --error-text: #f8d7da;
+            --link-color: #6cb2f7;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 2em auto;
+            background: var(--secondary-bg);
+            padding: 2em 3em;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--text-color);
+            margin-bottom: 1.5em;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5em;
+            font-weight: 500;
+        }
+
+        textarea {
+            width: 100%; /* Use 100% width */
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+            padding: 12px;
+            margin-bottom: 1em;
+            border: 1px solid var(--input-border);
+            border-radius: 4px;
+            font-size: 1em;
+            background-color: var(--input-bg);
+            color: var(--text-color);
+            min-height: 150px; /* Ensure a decent minimum height */
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1em; /* Space between buttons */
+            align-items: center;
+        }
+
+        input[type=submit],
+        .button-link {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            text-decoration: none; /* For link button */
+            display: inline-block; /* For link button */
+            text-align: center;
+            transition: background-color 0.2s ease;
+        }
+
+        input[type=submit]:hover,
+        .button-link:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .button-link {
+            background-color: var(--input-border); /* Different color for secondary button */
+        }
+        .button-link:hover {
+            background-color: #666;
+        }
+
+        .result {
+            margin-top: 2em;
+            padding: 1.5em;
+            border-radius: 4px;
+            border: 1px solid;
+        }
+
+        .result.spam {
+            background-color: var(--error-bg);
+            color: var(--error-text);
+            border-color: var(--error-border);
+        }
+
+        .result.ham {
+            background-color: var(--success-bg);
+            color: var(--success-text);
+            border-color: var(--success-border);
+        }
+
+        .result h2 {
+            margin-top: 0;
+            font-size: 1.2em;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 0.5em;
+            margin-bottom: 1em;
+        }
+
+        .result p {
+            margin: 0.5em 0;
+        }
+
+        pre {
+            background-color: var(--input-bg);
+            padding: 15px;
+            border-radius: 4px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            color: #ccc; /* Lighter text for pre */
+            border: 1px solid var(--input-border);
+            max-height: 200px; /* Limit height */
+            overflow-y: auto; /* Add scroll if needed */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Spam Detector</h1>
+        <form method="post" action="{{ url_for('home') }}"> {# Ensure form posts to the correct route #}
+            <label for="email_text">Enter Email Text:</label><br>
+            {# Use submitted_text variable which now gets updated by GET requests too #}
+            <textarea id="email_text" name="email_text" rows="8" required>{{ email_text }}</textarea><br>
+            <div class="button-group">
+                <input type="submit" value="Check for Spam">
+                {# Link styled as a button that reloads the page with ?random=true #}
+                <a href="{{ url_for('home', random='true') }}" class="button-link">Load Random Email</a>
+            </div>
+        </form>
+
+        {% if prediction is not none %} {# Check if prediction exists #}
+            <div class="result {{ prediction }}">
+                <h2>Result:</h2>
+                {# Use email_text variable which holds the submitted/random text #}
+                <p><strong>Submitted Text:</strong></p>
+                <pre>{{ email_text }}</pre>
+                <p>The model predicts this is: <strong>{{ prediction.upper() }}</strong></p>
+                <p>(Spam Confidence: {{ spam_confidence }})</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html> 
