@@ -27,6 +27,23 @@ The main purpose of this project is to understand how text classification works 
 
 ---
 
+## 📁 Project Structure
+
+
+```text
+├── app.py
+├── spam_detector.py
+├── requirements.txt
+├── README.md
+│
+├── data/
+│   └── spam_data.csv
+│
+└── templates/
+    └── index.htm
+```
+---
+
 ## 📊 Dataset Information
 
 - Uses the **SMS Spam Collection Dataset**
@@ -53,18 +70,3 @@ git clone https://github.com/your-username/email-spam-analysis-system.git
 cd email-spam-analysis-system
 
 ---
-
-## 📁 Project Structure
-
-
-```text
-├── app.py
-├── spam_detector.py
-├── requirements.txt
-├── README.md
-│
-├── data/
-│   └── spam_data.csv
-│
-└── templates/
-    └── index.html
