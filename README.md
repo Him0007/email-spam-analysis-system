@@ -43,7 +43,7 @@ The main purpose of this project is to understand how text classification works 
 ├── requirements.txt
 ├── spam data.csv
 └── spam detector.py
-
+```
 ---
 
 ## 📊 Dataset Information
