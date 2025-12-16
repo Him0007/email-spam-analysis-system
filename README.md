@@ -31,6 +31,7 @@ The main purpose of this project is to understand how text classification works 
 
 
 ├── app.py # Main Flask application
+
 ├── spam_detector.py # Machine learning logic
 ├── requirements.txt # Required Python packages
 ├── README.md
