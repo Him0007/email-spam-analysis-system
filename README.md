@@ -31,16 +31,17 @@ The main purpose of this project is to understand how text classification works 
 
 
 │
-├── app.py    
+├── app.py
 ├── spam_detector.py
-├── requirements.txt 
-├── README.md   
+├── requirements.txt
+├── README.md
 │
 ├── data/
-│   └── spam_data.csv    
+│   └── spam_data.csv
 │
 └── templates/
-    └── index.html       
+    └── index.html
+     
 
 ---
 
