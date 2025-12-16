@@ -32,12 +32,13 @@ The main purpose of this project is to understand how text classification works 
 
 ```text
 ├── app.py
-├── spam_detector.py
+├── spam detector.py
+├── spam data.csv
 ├── requirements.txt
 ├── README.md
 │
 ├── data/
-│   └── spam_data.csv
+│   └── spam data.csv
 │
 └── templates/
     └── index.htm
