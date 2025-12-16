@@ -31,18 +31,19 @@ The main purpose of this project is to understand how text classification works 
 
 
 ```text
-├── app.py
-├── spam detector.py
-├── spam data.csv
-├── requirements.txt
-├── README.md
-│
+
 ├── data/
 │   └── spam data.csv
 │
-└── templates/
+├── templates/
     └── index.htm
-```
+│
+├── app.py
+├── README.md
+├── requirements.txt
+├── spam data.csv
+└── spam detector.py
+
 ---
 
 ## 📊 Dataset Information
