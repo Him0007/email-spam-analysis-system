@@ -30,7 +30,7 @@ The main purpose of this project is to understand how text classification works 
 ## 📁 Project Structure
 
 
-│
+```text
 ├── app.py
 ├── spam_detector.py
 ├── requirements.txt
@@ -41,7 +41,7 @@ The main purpose of this project is to understand how text classification works 
 │
 └── templates/
     └── index.html
-     
+
 
 ---
 
