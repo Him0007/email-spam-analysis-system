@@ -31,7 +31,7 @@ The main purpose of this project is to understand how text classification works 
 
 
 │
-  ├── app.py    
+├── app.py    
 ├── spam_detector.py
 ├── requirements.txt 
 ├── README.md   
