@@ -27,25 +27,6 @@ The main purpose of this project is to understand how text classification works 
 
 ---
 
-## 📁 Project Structure
-
-
-```text
-
-├── data/
-│   └── spam data.csv
-│
-├── templates/
-    └── index.htm
-│
-├── app.py
-├── README.md
-├── requirements.txt
-├── spam data.csv
-└── spam detector.py
-```
----
-
 ## 📊 Dataset Information
 
 - Uses the **SMS Spam Collection Dataset**
