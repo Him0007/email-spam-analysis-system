@@ -1,6 +1,6 @@
 # 📧 Email Spam Analysis System
 
-This project is a simple email spam detection system built using **Python, Machine Learning, and Flask**.  
+This project is a simple email spam detection system built using **Python,and Flask**.  
 It checks whether a given email or message text is **Spam** or **Not Spam (Ham)** and also shows how confident the model is about its prediction.
 
 The main purpose of this project is to understand how text classification works and how a machine learning model can be used in a real web application.
