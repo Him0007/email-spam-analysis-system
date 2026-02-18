@@ -49,7 +49,7 @@ The main purpose of this project is to understand how text classification works 
 
 ### Step 1: Clone the Repository
 ```bash
-git clone https://github.com/your-username/email-spam-analysis-system.git
+git clone https://github.com/him0007/email-spam-analysis-system.git
 cd email-spam-analysis-system
 
 ---
